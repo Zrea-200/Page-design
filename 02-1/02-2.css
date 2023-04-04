@@ -1,0 +1,55 @@
+.container {
+    width: 30vw;
+    position: relative;
+    /* 好像顺序写错了没影响 */
+    /* The border property may be specified using one,
+        two,
+        or three of the values listed below. The order of the values does not matter.
+        可以使用下面列出的一个、两个或三个值指定border属性。值的顺序并不重要。
+         */
+    /* border: 1px red solid; */
+
+    font-size: 0;
+    /* font-size: 0 不是指字体大小是0px \
+    代码自动格式化的时候，往往会设置一些适当的缩进、换行，
+    但当元素的display为inline或者inline-block的时候，
+    这些缩进、换行就会产生空白，导致前端页面展示变形。 */
+}
+
+div img {
+    /* 这样设置，图片就会根据父级的宽度显示大小，即最大30vw */
+    width: 100%;
+    opacity: 0.5;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+div :nth-child(n+2) {
+    position: absolute;
+    left: 0;
+}
+
+div :nth-child(2) {
+    clip-path: polygon(5% 5%, 14% 10%, 14% 22%, 5% 28%);
+    transform: translate(-18px, 50%)scale(1);
+}
+
+div :nth-child(3) {
+    clip-path: polygon(70% 0, 100% 0, 100% 42%, 60% 48%, 40% 28%);
+    /* CSS transform 属性允许你旋转，缩放，倾斜或平移给定元素。这是通过修改 CSS 视觉格式化模型的坐标空间来实现的。 */
+    /* 警告： 只能转换由盒模型定位的元素。根据经验，如果元素具有display: block，则由盒模型定位元素。 */
+    /* transform属性可以指定为关键字值 none 或一个或多个 <transform-function>值。 */
+    /* 要应用的一个或多个 CSS 变换函数。变换函数按从左到右的顺序相乘，这意味着复合变换按从右到左的顺序有效地应用。 */
+    transform: scale(1.05)scale(1);
+}
+
+div :nth-child(4) {
+    clip-path: polygon(10% 90%, 20% 75%, 95% 75%, 100% 100%, 20% 100%);
+    transform: translate(12px, 27px)scale(0.93);
+}
